@@ -4,13 +4,15 @@ Creare una funzione per capire se la parola inserita è palindroma
 */
 
 //Placeholders
-var wordPlaceholder = document.getElementById("enteredWord")
-var resultPlaceholder = document.getElementById("result")
+var wordPlaceholder = document.getElementById("enteredWord");
+var resultPlaceholder = document.getElementById("result");
 
 //Functions
-function isPalindroma(word, reverseWord) {
-  reverseWord = word.split("").reverse().join("");
-  if (word === reverseWord) {
+function isPalindrome(word) {
+  for (var i = 0; i < word.length; i++) {
+    if (word[i] !== word[word.length - i - 1]) {
+      return false;
+    }
     return true;
   }
 }
@@ -25,8 +27,8 @@ do {
 wordPlaceholder.innerText = "Hai inserito la parola " + "'" + userWord + "'";
 
 // Check the result and print an appropriate message
-if (isPalindroma(userWord)) {
-    resultPlaceholder.innerText = "La parola inserita è palindroma";
+if (isPalindrome(userWord)) {
+  resultPlaceholder.innerText = "La parola inserita è palindroma";
 } else {
-    resultPlaceholder.innerText = "La parola inserita non è palindroma";
+  resultPlaceholder.innerText = "La parola inserita non è palindroma";
 }
