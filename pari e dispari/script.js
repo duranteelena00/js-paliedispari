@@ -46,7 +46,7 @@ userNumberPlaceholder.innerText = "Hai inserito il numero " + userNumber;
 randomNumberPlaceholder.innerText = "L'intelligenza artificiale ha generato il numero " + randomNumber;
 
 //Check the result and print an appropriate message
-if (isEven(userNumber, randomNumber)) {
+if ((isEven(userNumber, randomNumber) && userChoice === "pari") || (!isEven(userNumber, randomNumber) && userChoice === "dispari")) {
   resultPlaceholder.innerText = "Hai vinto";
 } else {
   resultPlaceholder.innerText = "L'intelligenza artificiale ha vinto";
